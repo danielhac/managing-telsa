@@ -21,7 +21,7 @@ export class FleetDataService {
                     }
                     else {
                         let e = new DataError('Invalid car data');
-                        this.errors.push(car);
+                        this.errors.push(e);
                     }
                     break;
                 case 'drone':
