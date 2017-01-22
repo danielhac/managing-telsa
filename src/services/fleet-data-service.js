@@ -24,7 +24,11 @@ export class FleetDataService {
                 return 1;
             }
             return 0;
-        })
+        });
+    }
+
+    filterCarsByMake(filter) {
+        return this.cars.filter(car => car.make.indexOf(filter) >= 0);
     }
 
     loadData(fleet) {
