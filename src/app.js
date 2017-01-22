@@ -4,9 +4,21 @@ import {Drone} from './classes/drone.js';
 import {fleet} from './fleet-data.js';
 import {FleetDataService} from './services/fleet-data-service.js';
 import {Button} from './ui/button.js ';
+import {Image} from './ui/image.js';
+import {TitleBar} from './ui/title-bar.js';
 
-let b = new Button('Click me');
-b.appendToElement($('body'));
+let tb = new TitleBar('My App');
+tb.addLink('Home', '');
+tb.addLink('Cars', '');
+tb.addLink('Drones', '');
+tb.addLink('Map', '');
+tb.appendToElement($('body'));
+
+// let b = new Button('Click me');
+// b.appendToElement($('body'));
+//
+// let i = new Image('../images/tesla.jpg');
+// i.appendToElement($('body'));
 
 // ////////// Code below this line for testing purposes
 
