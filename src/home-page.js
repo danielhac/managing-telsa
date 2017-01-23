@@ -1,12 +1,12 @@
-import {BaseElement} from './ui/base-element.js';
+import {Page} from './framework/page.js';
 import {Image} from './ui/image.js';
 import {Button} from './ui/button.js';
 import {application} from './app.js';
 
-export class HomePage extends BaseElement {
+export class HomePage extends Page {
 
     constructor() {
-        super();
+        super('Home');
     }
 
     createElement() {
