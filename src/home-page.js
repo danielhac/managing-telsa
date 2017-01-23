@@ -20,7 +20,7 @@ export class HomePage extends Page {
         let b = new Button('Self Driving Cars');
         b.setStyleString(styleString);
         b.appendToElement(this.element);
-        //b.element.click(() => application.activateRoute('Cars'));
+        b.element.click(() => application.activateRoute('Cars'));
 
         b = new Button('Drones');
         b.setStyleString(styleString);
