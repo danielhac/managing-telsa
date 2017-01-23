@@ -28,7 +28,16 @@ export class ApplicationBase {
     }
 
     show(element) {
+        // Title bar - Navigation
         this.titleBar.appendToElement(element);
+
+        // Assign click handler to links within Title bar
+        // Finding 'mdl-navigation__link' within 'title-bar.js' from MDL
+        // Use => instead of function to ensure that 'this.activateRoute...' is set to instance of this class
+        this.titleBar.element.find('.mdl-navigation__link').click((event) => {
+            let route = event.target.innerHTML;
+            this.activateRoute(route.trim()); // trim to ensure preceding and following spaces aren't included from 'title-bar.js'
+        });
 
         if (this.defaultRoute) {
             this.activateRoute(this.defaultRoute);
