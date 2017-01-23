@@ -25,7 +25,7 @@ export class HomePage extends Page {
         b = new Button('Drones');
         b.setStyleString(styleString);
         b.appendToElement(this.element);
-        //b.element.click(() => application.activateRoute('Drones'));
+        b.element.click(() => application.activateRoute('Drones'));
     }
 
     getElementString() {

@@ -47,7 +47,14 @@ export class FleetDataService {
                     }
                     break;
                 case 'drone':
-                    this.drones.push(data);
+                    let drone = this.loadDrone(data);
+                    if (drone) {
+                        this.drones.push(drone);
+                    }
+                    else {
+                        let e = new DataError('Invalid Drone data');
+                        this.errors.push(e);
+                    }
                     break;
                 default:
                     let e = new DataError('Invalid vehicle type', data);
@@ -65,6 +72,18 @@ export class FleetDataService {
             return c;
         } catch (e) {
             this.errors.push(new DataError('Error loading car', car));
+        }
+        return null;
+    }
+
+    loadDrone(drone) {
+        try {
+            let d = new Drone(drone.license, drone.model, drone.latLong);
+            d.airtimehours = drone.airtimehours;
+            d.base = drone.base;
+            return d;
+        } catch (e) {
+            this.errors.push(new DataError('Error loading drone', drone));
         }
         return null;
     }
